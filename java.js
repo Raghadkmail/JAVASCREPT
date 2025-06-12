@@ -92,3 +92,8 @@ function deleteTodo(index) {
     }
   });
 }
+function setUpdating(index) {
+  todos[index].isUpdating = true;
+  localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
+}
