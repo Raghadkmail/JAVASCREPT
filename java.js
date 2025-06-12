@@ -13,3 +13,11 @@ function isValidTask(task) {
   if (task.trim().length < 6) return "Task must be more than 5 letters.";
   return "";
 }
+document.getElementById('add-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const task = taskInput.value;
+  const validationMessage = isValidTask(task);
+  if (validationMessage) {
+    errorMessage.textContent = validationMessage;
+    return;
+  }
