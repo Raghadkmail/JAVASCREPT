@@ -65,4 +65,30 @@ function displayTodos() {
     tasksList.appendChild(taskDiv);
   });
 }
-
+function toggleCompleted(index) {
+  todos[index].completed = !todos[index].completed;
+  localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
+}
+function deleteTodo(index) {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      todos.splice(index, 1);
+      localStorage.setItem('todos', JSON.stringify(todos));
+      displayTodos();
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your task has been deleted.",
+        icon: "success"
+      });
+    }
+  });
+}
