@@ -21,3 +21,10 @@ document.getElementById('add-form').addEventListener('submit', (e) => {
     errorMessage.textContent = validationMessage;
     return;
   }
+  errorMessage.textContent = "";
+  todos.push({ todo: task.trim(), isUpdating: false, completed: false });
+  localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
+  taskInput.value = "";
+});
+
