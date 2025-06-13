@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  
+</style>
 
 <head>
   <meta charset="utf-8">
@@ -36,8 +39,18 @@
   <input type="text" class="form-control" id="taskInput" placeholder="New Todo" />
 </div>
 <span class="text-small text-danger" id="errorMessage"></span>
-  <button type="submit" id="addTaskBtn" class="btn btn-primary px-4 mt-3 w-100">Add</button>
+  <button type="submit" id="addTaskBtn" class="btn btn-primary px-4 mt-3 w-100">Add New Task</button>
 </form>
+
+<div class="d-flex justify-content-center gap-3 mb-4">
+  <button class="btn btn-info btn-lg px-5" onclick="filterTodos('all')">All</button>
+  <button class="btn btn-info btn-lg px-5" onclick="filterTodos('done')">Done</button>
+  <button class="btn btn-info btn-lg px-5" onclick="filterTodos('todo')">Todo</button>
+</div>
+
+
+
+
 
 <div class="container mt-3">
   <h2 class="text-center mb-5">Todo List</h2>
