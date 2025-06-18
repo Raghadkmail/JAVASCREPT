@@ -169,9 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmationModal.style.display = "none";
     };
 
-    cancelDeleteButton.onclick = () => {
-      confirmationModal.style.display = "none";
-    };
+   
   });
 
   renderTasks(currentFilter);
