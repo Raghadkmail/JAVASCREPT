@@ -279,6 +279,18 @@ input[type="checkbox"]:checked {
   position: relative;
 }
 
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 3px;
+  height: 8px;
+  border: solid green;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
 
   </style>
   </head>
